@@ -1,4 +1,4 @@
-#ifndef  __MAIN__H__
+#ifndef __MAIN__H__
 #define __MAIN__H__
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,4 +11,4 @@ char *_strdup(char *str);
 void prinInt(int var, int *retval, int *i);
 int printChar(char var, int *i);
 int printStr(char *str, int *i);
-#endif 
+#endif
