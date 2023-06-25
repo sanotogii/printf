@@ -10,6 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, retval = 0;
+	char percent = '%';
 	va_list ap;
 
 	va_start(ap, format);
@@ -24,10 +25,11 @@ int _printf(const char *format, ...)
 			if (*(format + i + 1) == 's')
 				retval += printStr(_strdup(va_arg(ap, char *)), &i);
 			if (*(format + i + 1) == '%')
-				retval += write(1, "%", 1);
+
+				retval += write(STDOUT_FILENO, &percent, 1);
 		}
 		else
-			retval += write(1, format + i, 1);
+			retval += write(STDOUT_FILENO, format + i, 1);
 		i++;
 	}
 	va_end(ap);
