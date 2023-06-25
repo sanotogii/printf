@@ -9,9 +9,9 @@
 
 int  printChar(char var, int *i)
 {
-	int j = 0, val;
+	int j = 0;
 
-	j += write(STDOUT_FILENO, &var, sizeof(val));
+	j += write(STDOUT_FILENO, &var, 1);
 	(*i)++;
 	return (j);
 }
