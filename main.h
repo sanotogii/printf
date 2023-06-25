@@ -11,4 +11,5 @@ char *_strdup(char *str);
 void prinInt(int var, int *retval, int *i);
 int printChar(char var, int *i);
 int printStr(char *str, int *i);
+void to_binary(unsigned int var, int *len, int *i);
 #endif
