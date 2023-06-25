@@ -3,7 +3,7 @@
 /**
 * printStr - ENTRYPOINT
 * @str: constant
-* @i: 2 param
+* @i: counter
 * Return: 0 success or uint
 */
 int  printStr(char *str, int *i)
@@ -12,11 +12,11 @@ int  printStr(char *str, int *i)
 
 	if (str)
 	{
-		j += write(1, str, _strlen(str));
+		j += write(STDOUT_FILENO, str, _strlen(str));
 		free(str);
 	}
 	else
-		j += write(1, "(null)", _strlen("(null)"));
+		j += write(STDOUT_FILENO, "(null)", _strlen("(null)"));
 	(*i)++;
 	return (j);
 }

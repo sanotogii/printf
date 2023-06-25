@@ -14,12 +14,12 @@ void  prinInt(int var, int *len, int *i)
 	if (var < 0)
 	{
 		(*len)++;
-		write(1, "-", 1);
+		write(STDOUT_FILENO, "-", 1);
 		if (var == -2147483648)
 		{
 			var = -147483648;
 			(*len)++;
-			write(1, "2", 1);
+			write(STDOUT_FILENO, "2", 1);
 		}
 		var = -var;
 	}
@@ -28,6 +28,6 @@ void  prinInt(int var, int *len, int *i)
 	if (var / 10 == 0)
 		(*i)++;
 	ch = var % 10 + '0';
-	write(1, &ch, 1);
+	write(STDOUT_FILENO, &ch, 1);
 	(*len)++;
 }
