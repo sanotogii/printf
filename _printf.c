@@ -22,14 +22,16 @@ int _printf(const char *format, ...)
 		{
 			if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
 				prinInt(va_arg(ap, int), &retval, &i);
-			if (*(format + i + 1) == 'c')
+			else if (*(format + i + 1) == 'c')
 				retval += printChar(va_arg(ap, int), &i);
-			if (*(format + i + 1) == 's')
+			else if (*(format + i + 1) == 's')
 				retval += printStr(_strdup(va_arg(ap, char *)), &i);
-			if (*(format + i + 1) == '%')
-				retval += write(STDOUT_FILENO, &percent, 1);
-			if (*(format + i + 1) == 'b')
+			else if (*(format + i + 1) == '%')
+				retval += printStr(_strdup("%"), &i);
+			else if (*(format + i + 1) == 'b')
 				to_binary(va_arg(ap, unsigned int), &retval, &i);
+			else
+				retval += write(STDOUT_FILENO, &percent, 1);
 		}
 		else
 			retval += write(STDOUT_FILENO, format + i, 1);
