@@ -25,7 +25,6 @@ int _printf(const char *format, ...)
 			if (*(format + i + 1) == 's')
 				retval += printStr(_strdup(va_arg(ap, char *)), &i);
 			if (*(format + i + 1) == '%')
-
 				retval += write(STDOUT_FILENO, &percent, 1);
 		}
 		else
