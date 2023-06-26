@@ -3,16 +3,19 @@
 /**
 * to_binary - ENTRYPOINT
 * @var: constant
-* @l: second param
+* @len: second param
+* @i: third second
 * Return: 0 success or uint
 */
-void to_binary(unsigned int var, int *l)
+void to_binary(unsigned int var, int *len, int *i)
 {
 	char ch;
 
 	if (var / 2)
-		to_binary(var / 2, l);
+		to_binary(var / 2, len, i);
+	if (var / 2 == 0)
+		(*i)++;
 	ch = var % 2 + '0';
 	write(1, &ch, 1);
-	(*l)++;
+	(*len)++;
 }

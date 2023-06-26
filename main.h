@@ -9,6 +9,12 @@ int _printf(const char *format, ...);
 int _strlen(char *s);
 char *_strdup(char *str);
 void prinInt(int var, int *retval, int *i);
-int printChar(char var, int *i);
-int printStr(char *str, int *i);
+void printChar(char var, int *i);
+int printStr(char *str);
+void to_binary(unsigned int var, int *len);
+void printUns(unsigned int var, int *retval);
+void printOctal(unsigned int var, int *retval);
+void printhex(unsigned int var, int *retval);
+void printX(unsigned int var, int *retval, int *i);
+
 #endif 

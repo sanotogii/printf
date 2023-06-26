@@ -7,11 +7,9 @@
 * Return: 0 success or uint
 */
 
-int  printChar(char var, int *i)
+void printChar(char var, int *i)
 {
-	int j = 0, val;
 
-	j += write(STDOUT_FILENO, &var, sizeof(val));
+	write(1, &var, 1);
 	(*i)++;
-	return (j);
 }
