@@ -14,9 +14,7 @@ void printUns(unsigned int var, int *length, int *i)
 
 	if (var == 0)
 	{
-		write(1, "0", 1);
 		(*i)++;
-		(*length)++;
 		return;
 	}
 	printUns(var / 10, length, i);

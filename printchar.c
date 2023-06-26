@@ -3,15 +3,15 @@
 /**
 * printChar - ENTRYPOINT
 * @var: constant
-* @len: argv 2
-* @i: 2 counter
+* @i: argv 2
 * Return: 0 success or uint
 */
 
-void printChar(char var, int *len, int *i)
+int printChar(char var, int *i)
 {
+	int j = 0;
 
-	write(1, &var, 1);
-	(*len)++;
+	j += write(STDOUT_FILENO, &var, 1);
 	(*i)++;
+	return (j);
 }
