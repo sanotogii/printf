@@ -12,9 +12,9 @@ void prinInt(int var, int *retval, int *i);
 int printChar(char var, int *i);
 int printStr(char *str, int *i);
 void to_binary(unsigned int var, int *len, int *i);
-void printUns(unsigned int var, int *retval, int *i);
-void printOctal(unsigned int var, int *retval, int *i);
-void printhex(unsigned int var, int *retval, int *i);
-void printX(unsigned int var, int *retval, int *i);
+void printUns(unsigned int var, int *retval, int *i, int test_nb);
+void printOctal(unsigned int var, int *retval, int *i, int test_nb);
+void printhex(unsigned int var, int *retval, int *i, int test_nb);
+void printX(unsigned int var, int *retval, int *i, int test_nb);
 void to_binary(unsigned int var, int *len, int *i);
 #endif

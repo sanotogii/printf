@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, retval = 0;
+	int i = 0, retval = 0, test_nb = 0;
 	char percent = '%';
 	va_list ap;
 
@@ -28,13 +28,13 @@ int _printf(const char *format, ...)
 			else if (*(format + i + 1) == 'b')
 				to_binary(va_arg(ap, unsigned int), &retval, &i);
 			else if (*(format + i + 1) == 'u')
-				printUns(va_arg(ap, unsigned int), &retval, &i);
+				printUns(va_arg(ap, unsigned int), &retval, &i, test_nb);
 			else if (*(format + i + 1) == 'o')
-				printOctal(va_arg(ap, unsigned int), &retval, &i);
+				printOctal(va_arg(ap, unsigned int), &retval, &i, test_nb);
 			else if (*(format + i + 1) == 'x')
-				printhex(va_arg(ap, unsigned int), &retval, &i);
+				printhex(va_arg(ap, unsigned int), &retval, &i, test_nb);
 			else if (*(format + i + 1) == 'X')
-				printX(va_arg(ap, unsigned int), &retval, &i);
+				printX(va_arg(ap, unsigned int), &retval, &i, test_nb);
 			else if (*(format + i + 1) == '%')
 				retval += printStr(_strdup("%"), &i);
 			else
