@@ -1,4 +1,4 @@
-#ifndef  __MAIN__H__
+#ifndef __MAIN__H__
 #define __MAIN__H__
 #include <stdlib.h>
 #include <stdio.h>
@@ -9,12 +9,12 @@ int _printf(const char *format, ...);
 int _strlen(char *s);
 char *_strdup(char *str);
 void prinInt(int var, int *retval, int *i);
-void printChar(char var, int *i);
-int printStr(char *str);
-void to_binary(unsigned int var, int *len);
-void printUns(unsigned int var, int *retval);
-void printOctal(unsigned int var, int *retval);
-void printhex(unsigned int var, int *retval);
+void printChar(char var, int *retval, int *i);
+int printStr(char *str, int *i);
+void to_binary(unsigned int var, int *len, int *i);
+void printUns(unsigned int var, int *retval, int *i);
+void printOctal(unsigned int var, int *retval, int *i);
+void printhex(unsigned int var, int *retval, int *i);
 void printX(unsigned int var, int *retval, int *i);
 
-#endif 
+#endif

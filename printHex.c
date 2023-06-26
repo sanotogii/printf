@@ -4,17 +4,21 @@
  * printhex - function that handle x
  * @var: arg1
  * @len: arg2
+ * @i: arg3
  * Return: void
  */
 
-void printhex(unsigned int var, int *len)
+void printhex(unsigned int var, int *len, int *i)
 {
 	char ch1, ch2;
 	int digit;
 
 	if (var == 0)
+	{
+		(*i)++;
 		return;
-	printhex(var / 16, len);
+	}
+	printhex(var / 16, len, i);
 	digit = var % 16;
 	ch1 = digit + '0';
 	ch2 = digit + 'a' - 10;
