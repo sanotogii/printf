@@ -12,6 +12,7 @@ void prinInt(int var, int *retval, int *i);
 void printChar(char var, int *retval, int *i);
 int printStr(char *str, int *i);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 void to_binary(unsigned int var, int *len, int *i);
 void printUns(unsigned int var, int *retval, int *i);
@@ -20,4 +21,7 @@ void printhex(unsigned int var, int *retval, int *i);
 void printX(unsigned int var, int *retval, int *i);
 
 >>>>>>> sano
+=======
+void to_binary(unsigned int var, int *len, int *i);
+>>>>>>> refs/remotes/origin/master
 #endif

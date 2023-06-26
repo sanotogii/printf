@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 			if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
 				prinInt(va_arg(ap, int), &retval, &i);
 			else if (*(format + i + 1) == 'c')
+<<<<<<< HEAD
 				printChar(va_arg(ap, int), &retval, &i);
 			else if (*(format + i + 1) == 's')
 				retval += printStr(_strdup(va_arg(ap, char *)), &i);
@@ -37,6 +38,15 @@ int _printf(const char *format, ...)
 				printX(va_arg(ap, unsigned int), &retval, &i);
 			else if (*(format + i + 1) == '%')
 				retval += printStr(_strdup("%"), &i);
+=======
+				retval += printChar(va_arg(ap, int), &i);
+			else if (*(format + i + 1) == 's')
+				retval += printStr(_strdup(va_arg(ap, char *)), &i);
+			else if (*(format + i + 1) == '%')
+				retval += printStr(_strdup("%"), &i);
+			else if (*(format + i + 1) == 'b')
+				to_binary(va_arg(ap, unsigned int), &retval, &i);
+>>>>>>> refs/remotes/origin/master
 			else
 				retval += write(STDOUT_FILENO, &percent, 1);
 		}
