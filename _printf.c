@@ -37,8 +37,6 @@ int _printf(const char *format, ...)
 				printX(va_arg(ap, unsigned int), &retval, &i);
 			else if (*(format + i + 1) == '%')
 				retval += printStr(_strdup("%"), &i);
-			else if (*(format + i + 1) == 'b')
-				to_binary(va_arg(ap, unsigned int), &retval, &i);
 			else
 				retval += write(STDOUT_FILENO, &percent, 1);
 		}

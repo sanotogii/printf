@@ -16,4 +16,5 @@ void printUns(unsigned int var, int *retval, int *i);
 void printOctal(unsigned int var, int *retval, int *i);
 void printhex(unsigned int var, int *retval, int *i);
 void printX(unsigned int var, int *retval, int *i);
+void to_binary(unsigned int var, int *len, int *i);
 #endif
