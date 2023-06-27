@@ -17,6 +17,10 @@ void printOctal(unsigned int var, int *retval, int *i, int test_nb);
 void printhex(unsigned int var, int *retval, int *i, int test_nb);
 void printX(unsigned int var, int *retval, int *i, int test_nb);
 void to_binary(unsigned int var, int *len, int *i);
-void func_call(char c, unsigned int var, int *retval, int *i, int test_nb);
-int findchar(char c);
+void func_call1(char c, unsigned int var, int *retval, int *i, int test_nb);
+void func_call2(char c, char *s, int *retval, int *i);
+int print_rev(char *s, int *i);
+int findchar1(char c);
+int findchar2(char c);
+char *rot13(char *s);
 #endif
