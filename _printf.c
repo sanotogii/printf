@@ -1,6 +1,27 @@
 #include "main.h"
 
 /**
+ *func_call - Entry point
+ * @c: arg1
+ * @var: arg2
+ * @retval: arg3
+ * @i: arg4
+ * @test_nb: arg5
+ * Return: void
+ */
+void func_call(char c, unsigned int var, int *retval, int *i, int test_nb)
+{
+	if (c == 'u')
+		printUns(var, retval, i, test_nb);
+	if (c == 'x')
+		printhex(var, retval, i, test_nb);
+	if (c == 'X')
+		printX(var, retval, i, test_nb);
+	if (c == 'o')
+		printOctal(var, retval, i, test_nb);
+}
+
+/**
  *_printf - Entry point
  *@format: 1 param
  * Return: Always 0
@@ -27,14 +48,10 @@ int _printf(const char *format, ...)
 				retval += printStr(_strdup(va_arg(ap, char *)), &i);
 			else if (*(format + i + 1) == 'b')
 				to_binary(va_arg(ap, unsigned int), &retval, &i);
-			else if (*(format + i + 1) == 'u')
-				printUns(va_arg(ap, unsigned int), &retval, &i, test_nb);
-			else if (*(format + i + 1) == 'o')
-				printOctal(va_arg(ap, unsigned int), &retval, &i, test_nb);
-			else if (*(format + i + 1) == 'x')
-				printhex(va_arg(ap, unsigned int), &retval, &i, test_nb);
-			else if (*(format + i + 1) == 'X')
-				printX(va_arg(ap, unsigned int), &retval, &i, test_nb);
+			else if (*(format + i + 1) == 'u' || *(format + i + 1) == 'o' ||
+			*(format + i + 1) == 'x' || (*(format + i + 1) == 'X'))
+				func_call(*(format + i + 1), va_arg(ap, unsigned int),
+				 &retval, &i, test_nb);
 			else if (*(format + i + 1) == '%')
 				retval += printStr(_strdup("%"), &i);
 			else
