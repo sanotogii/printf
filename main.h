@@ -18,4 +18,5 @@ void printhex(unsigned int var, int *retval, int *i, int test_nb);
 void printX(unsigned int var, int *retval, int *i, int test_nb);
 void to_binary(unsigned int var, int *len, int *i);
 void func_call(char c, unsigned int var, int *retval, int *i, int test_nb);
+int findchar(char c);
 #endif

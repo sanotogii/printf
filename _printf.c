@@ -29,7 +29,7 @@ void func_call(char c, unsigned int var, int *retval, int *i, int test_nb)
 
 int _printf(const char *format, ...)
 {
-	int i = 0, retval = 0, test_nb = 0;
+	int i = 0, rval = 0, t_nbr = 0;
 	char percent = '%';
 	va_list ap;
 
@@ -41,26 +41,24 @@ int _printf(const char *format, ...)
 		if (*(format + i) == '%')
 		{
 			if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
-				prinInt(va_arg(ap, int), &retval, &i);
+				prinInt(va_arg(ap, int), &rval, &i);
 			else if (*(format + i + 1) == 'c')
-				retval += printChar(va_arg(ap, int), &i);
+				rval += printChar(va_arg(ap, int), &i);
 			else if (*(format + i + 1) == 's')
-				retval += printStr(_strdup(va_arg(ap, char *)), &i);
+				rval += printStr(_strdup(va_arg(ap, char *)), &i);
 			else if (*(format + i + 1) == 'b')
-				to_binary(va_arg(ap, unsigned int), &retval, &i);
-			else if (*(format + i + 1) == 'u' || *(format + i + 1) == 'o' ||
-			*(format + i + 1) == 'x' || (*(format + i + 1) == 'X'))
-				func_call(*(format + i + 1), va_arg(ap, unsigned int),
-				 &retval, &i, test_nb);
+				to_binary(va_arg(ap, unsigned int), &rval, &i);
+			else if (findchar(*(format + i + 1)))
+				func_call(*(format + i + 1), va_arg(ap, unsigned int), &rval, &i, t_nbr);
 			else if (*(format + i + 1) == '%')
-				retval += printStr(_strdup("%"), &i);
+				rval += printStr(_strdup("%"), &i);
 			else
-				retval += write(STDOUT_FILENO, &percent, 1);
+				rval += write(STDOUT_FILENO, &percent, 1);
 		}
 		else
-			retval += write(STDOUT_FILENO, format + i, 1);
+			rval += write(STDOUT_FILENO, format + i, 1);
 		i++;
 	}
 	va_end(ap);
-	return (retval);
+	return (rval);
 }
