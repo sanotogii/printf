@@ -21,7 +21,6 @@ int print_rev(char *s, int *i)
 		write(STDOUT_FILENO, (s + len), 1);
 		len--;
 	}
-	write(STDOUT_FILENO, _strdup("\n"), 1);
 	(*i)++;
 	return (_strlen(s) - 1);
 }
