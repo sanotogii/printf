@@ -9,7 +9,7 @@
  * @test_nb: arg5
  * Return: void
  */
-void func_call1(char c, unsigned int var, int *retval, int *i, int test_nb)
+void func_caller1(char c, unsigned int var, int *retval, int *i, int test_nb)
 {
 	if (c == 'u')
 		printUns(var, retval, i, test_nb);
@@ -21,14 +21,14 @@ void func_call1(char c, unsigned int var, int *retval, int *i, int test_nb)
 		printOctal(var, retval, i, test_nb);
 }
 /**
- *func_call2 - Entry point
+ *func_caller2 - Entry point
  * @c: arg1
  * @s: arg2
  * @retval: arg3
  * @i: arg4
  * Return: void
  */
-void func_call2(char c, char *s, int *retval, int *i)
+void func_caller2(char c, char *s, int *retval, int *i)
 {
 	char *str = NULL;
 
@@ -70,9 +70,9 @@ int _printf(const char *format, ...)
 			else if (*(format + i + 1) == 'b')
 				to_binary(va_arg(ap, unsigned int), &rval, &i);
 			else if (findchar1(*(format + i + 1)))
-				func_call1(*(format + i + 1), va_arg(ap, unsigned int), &rval, &i, t_nbr);
+				func_caller1(*(format + i + 1), va_arg(ap, unsigned int), &rval, &i, t_nbr);
 			else if (findchar2(*(format + i + 1)))
-				func_call2(*(format + i + 1), _strdup(va_arg(ap, char *)), &rval, &i);
+				func_caller2(*(format + i + 1), _strdup(va_arg(ap, char *)), &rval, &i);
 			else if (*(format + i + 1) == '%')
 				rval += printStr(_strdup("%"), &i);
 			else
