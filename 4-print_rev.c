@@ -13,9 +13,10 @@
 
 int print_rev(char *s, int *i)
 {
-	int len;
+	int len, len2 = 0;
 
 	len = _strlen(s) - 1;
+	len2 = len;
 	while (len >= 0)
 	{
 		write(STDOUT_FILENO, (s + len), 1);
@@ -23,5 +24,5 @@ int print_rev(char *s, int *i)
 	}
 	free(s);
 	(*i)++;
-	return (_strlen(s) - 1);
+	return (len2 + 1);
 }

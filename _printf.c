@@ -31,9 +31,13 @@ void func_call1(char c, unsigned int var, int *retval, int *i, int test_nb)
 void func_call2(char c, char *s, int *retval, int *i)
 {
 	char *str = NULL;
+	int len = 0;
 
 	if (c == 'r')
-		*retval += print_rev(s, i);
+	{
+		len = print_rev(s, i);
+		*retval += len;
+	}
 	if (c == 'R')
 	{
 		str = rot13(s);
