@@ -40,7 +40,8 @@ int  printstrX(char *str, int *retval, int *i)
 			if (str[k] < 32 || str[k] >= 127)
 			{
 				*retval += write(1, "\\", 1);
-				*retval += write(1, "x0", 2);
+				if (str[k] <= 10)
+					*retval += write(1, "x0", 2);
 				(*i)--;
 				printX(str[k], retval, i, 0);
 			}
