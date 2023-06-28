@@ -30,7 +30,7 @@ int findchar1(char c)
 int findchar2(char c)
 {
 	int i, find = 0, lenght = 0;
-	char *s = "psrR";
+	char *s = "SpsrR";
 
 	lenght = _strlen(s);
 	for (i = 0; i < lenght; i++)

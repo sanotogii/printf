@@ -44,9 +44,9 @@ void func_call2(char c, char *s, int *retval, int *i)
 		*retval += printStr(str, i);
 	}
 	if (c == 's')
-	{
 		*retval += printStr(s, i);
-	}
+	if (c == 'S')
+		printstrX(s, retval, i);
 }
 
 

@@ -26,4 +26,5 @@ char *rot13(char *s);
 int printascii(char var, int *i);
 void func_call3(char c, int var, int *retval, int *i);
 int findchar3(char c);
+int  printstrX(char *str, int *retval, int *i);
 #endif
