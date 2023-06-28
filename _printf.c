@@ -79,7 +79,7 @@ int _printf(const char *format, ...)
 				func_call2(*(format + i + 1), _strdup(va_arg(ap, char *)), &rval, &i);
 			else if (*(format + i + 1) == '%')
 				rval += printStr(_strdup("%"), &i);
-			else if ((format[i + 1] != '\0' && format[i + 1] != ' ') ||
+			else if ((format[i + 1] != '\0' && format[i + 1] != ' ') &&
 			 format[i + 2] != '\0')
 				rval += write(STDOUT_FILENO, &percent, 1);
 			else
