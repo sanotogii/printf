@@ -41,6 +41,7 @@ int  printstrX(char *str, int *retval, int *i)
 			{
 				*retval += write(1, "\\", 1);
 				*retval += write(1, "x0", 2);
+				(*i)--;
 				printX(str[k], retval, i, 0);
 			}
 			else
