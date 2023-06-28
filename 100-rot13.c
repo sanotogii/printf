@@ -13,9 +13,9 @@
 char *rot13(char *s)
 {
 	int i = 0, j;
-	char *rot13 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoparstuvwxyz",
-	     *rep = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
+	char *rot13 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+	     *rep =   "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+ 
 	if (!s)
 		return (NULL);
 	while (*(s + i) != '\0')
