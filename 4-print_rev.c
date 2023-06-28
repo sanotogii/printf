@@ -21,6 +21,7 @@ int print_rev(char *s, int *i)
 		write(STDOUT_FILENO, (s + len), 1);
 		len--;
 	}
+	free(s);
 	(*i)++;
 	return (_strlen(s) - 1);
 }
