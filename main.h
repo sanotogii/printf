@@ -23,4 +23,7 @@ int print_rev(char *s, int *i);
 int findchar1(char c);
 int findchar2(char c);
 char *rot13(char *s);
+int printascii(char var, int *i);
+void func_call3(char c, int var, int *retval, int *i);
+int findchar3(char c);
 #endif

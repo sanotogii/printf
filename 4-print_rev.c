@@ -15,6 +15,12 @@ int print_rev(char *s, int *i)
 {
 	int len, len2 = 0;
 
+	if (!s)
+	{
+		len2 = write(1, "(null)", 6);
+		(*i)++;
+		return (len2);
+	}
 	len = _strlen(s) - 1;
 	len2 = len;
 	while (len >= 0)

@@ -16,6 +16,8 @@ char *rot13(char *s)
 	char *rot13 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoparstuvwxyz",
 	     *rep = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	if (!s)
+		return (NULL);
 	while (*(s + i) != '\0')
 	{	j = 0;
 		while (*(rot13 + j) != '\0')

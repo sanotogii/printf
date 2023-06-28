@@ -41,7 +41,11 @@ void func_call2(char c, char *s, int *retval, int *i)
 	if (c == 'R')
 	{
 		str = rot13(s);
-		*retval += printStr((str), i);
+		*retval += printStr(str, i);
+	}
+	if (c == 's')
+	{
+		*retval += printStr(s, i);
 	}
 }
 
@@ -65,12 +69,8 @@ int _printf(const char *format, ...)
 	{
 		if (*(format + i) == '%')
 		{
-			if (*(format + i + 1) == 'd' || *(format + i + 1) == 'i')
-				prinInt(va_arg(ap, int), &rval, &i);
-			else if (*(format + i + 1) == 'c')
-				rval += printChar(va_arg(ap, int), &i);
-			else if (*(format + i + 1) == 's')
-				rval += printStr(_strdup(va_arg(ap, char *)), &i);
+			if (findchar3(*(format + i + 1)))
+				func_call3(format[i + 1], va_arg(ap, int), &rval, &i);
 			else if (*(format + i + 1) == 'b')
 				to_binary(va_arg(ap, unsigned int), &rval, &i);
 			else if (findchar1(*(format + i + 1)))
